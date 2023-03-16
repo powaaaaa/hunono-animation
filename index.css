@@ -5,10 +5,10 @@
   border: solid 2px;
   border-radius: 0.5em;
   width: 40%;
-  margin-left: 50%; /*規定値(→0%)が中央*/
+  margin-left: 50%; /* 規定値(→0%)が中央 */
   text-align: center;
 
-  /*アニメーションのプロパティ*/
+  /* アニメーションのプロパティ */
   animation-name: ani-1;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
@@ -19,14 +19,15 @@
   border: solid 2px;
   border-radius: 0.5em;
   width: 40%;
-  margin-left: 0%; /*規定値(→0%)が左端*/
+  margin-left: 0%; /* 規定値(→0%)が左端 */
   text-align: center;
 
-  /*一括指定（duration、delay以外は順不同）*/
+  /* 一括指定（duration、delay以外は順不同）*/
   animation: ani-1 2.5s infinite;
 }
 
-/*キーフレーム
+/*
+  キーフレーム
   0% → from、100% → to
   keepは同じ内容　書き連ねできる
 */
@@ -59,10 +60,68 @@
   animation-iteration-count: infinite;
 }
 
-/*開始と終了を消した例。往復する*/
+/* 開始と終了を消した例。往復する */
 @keyframes ani-2 {
   50% {
     margin-left: 60%;
     background-color: aqua;
+  }
+}
+
+/*
+  [step4] Delay Animations
+  複数アニメーションで時間差を仕掛けるとき便利
+*/
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#dap1 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: red;
+
+  animation: dan 5s infinite;
+}
+
+#dap2 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: blue;
+
+  animation: dan 5s infinite;
+  animation-delay: 1s; /* 遅延のプロパティ */
+}
+
+#dap3 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: yellow;
+
+  animation: dan 5s 2s infinite; /* 一括指定。必ずdurationの後にdelay */
+}
+
+@keyframes dan {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
