@@ -5,19 +5,64 @@
   border: solid 2px;
   border-radius: 0.5em;
   width: 40%;
-  margin: 0 auto;
+  margin-left: 50%; /*規定値(→0%)が中央*/
   text-align: center;
 
+  /*アニメーションのプロパティ*/
   animation-name: ani-1;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
 }
 
+#anp2 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%; /*規定値(→0%)が左端*/
+  text-align: center;
+
+  /*一括指定（duration、delay以外は順不同）*/
+  animation: ani-1 2.5s infinite;
+}
+
+/*キーフレーム
+  0% → from、100% → to
+  keepは同じ内容　書き連ねできる
+*/
 @keyframes ani-1 {
-  0% {
+  from {
     background-color: white;
   }
-  100% {
-    background-color: #00aeef;
+  30%,
+  60% {
+    background-color: aqua;
+    color: rgb(97, 32, 32);
+  }
+  to {
+    background-color: #1c159a;
+    color: white;
+    margin-left: 60%;
+  }
+}
+
+#anp3 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+
+  animation-name: ani-2;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+/*開始と終了を消した例。往復する*/
+@keyframes ani-2 {
+  50% {
+    margin-left: 60%;
+    background-color: aqua;
   }
 }
