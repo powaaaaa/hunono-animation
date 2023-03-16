@@ -69,6 +69,7 @@
 }
 
 /*
+----------------------------------------------------------------------------
   [step4] Delay Animations
   複数アニメーションで時間差を仕掛けるとき便利
 */
@@ -123,5 +124,61 @@ li {
   }
   to {
     opacity: 1;
+  }
+}
+
+/*
+-----------------------------------------------------------------------
+  timing-functionのAnimation　5例
+*/
+
+#tfa1 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease; /* 初期値 */
+}
+
+#tfa2 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: linear;
+}
+
+#tfa3 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-in;
+}
+
+#tfa4 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-out;
+}
+
+#tfa5 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes tfn {
+  from {
+    width: 0%;
   }
 }
