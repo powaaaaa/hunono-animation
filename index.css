@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#anp {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+
+  animation-name: ani-1;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ani-1 {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: #00aeef;
+  }
+}
