@@ -201,3 +201,72 @@ li {
     width: 0%;
   }
 }
+
+/*
+----------------------------------------------------------------------
+animation-timing-functionでコマ送りするsteps()
+*/
+
+#tfa7 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-none);
+}
+
+#tfa8 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-start);
+}
+
+#tfa9 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-end);
+}
+
+#tfa10 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-both);
+}
+
+/*
+  steps()というかanimation-timing-functionの全ての値は、キーフレームごとに適用されることに注意
+  4分割*キーフレーム2個なので、全体として8分割される。
+ */
+#tfa11 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn3 4s infinite;
+  animation-timing-function: steps(4, jump-none);
+}
+
+@keyframes tfn3 {
+  from {
+    width: 0%;
+    opacity: 1;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 0;
+  }
+}
