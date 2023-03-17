@@ -1,0 +1,35 @@
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#tsm1 {
+  width: 5em;
+  height: 2em;
+  color: blue;
+  border-color: blue;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 2em;
+
+  transition-duration: 2s;
+}
+
+/* transitionは自発的なプロパティ変化ではなく、変化させる仕組みがある前提のプロパティ */
+#tsm1:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.tsm2 {
+  transition-duration: 0.6s;
+}
+
+.tsm2:hover {
+  font-weight: bold;
+  color: blueviolet;
+  letter-spacing: 2px;
+}
