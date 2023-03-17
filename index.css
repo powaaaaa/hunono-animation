@@ -325,3 +325,59 @@ animation-timing-functionでコマ送りするsteps()
     margin-left: 90%;
   }
 }
+
+/*
+----------------------------------------------------------------------
+  animation-fill-mode
+*/
+
+#afm1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: none;
+}
+
+#afm2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: forwards;
+}
+
+#afm3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: backwards;
+}
+
+#afm4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes afn {
+  from {
+    background-color: coral;
+    margin-left: 0;
+  }
+  to {
+    background-color: coral;
+    margin-left: 90%;
+  }
+}
