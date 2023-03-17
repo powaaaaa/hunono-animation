@@ -33,3 +33,154 @@ li {
   color: blueviolet;
   letter-spacing: 2px;
 }
+
+/*
+--------------------------------------------------------------------
+  Step2 各プロパティ
+  1. transition-duration
+ */
+
+#flex_box {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#tsm3 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  transition-duration: 2s; /* 必要最低限なプロパティ */
+}
+
+#tsm3:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
+
+/* ------- 2.transition-property --------- */
+#tsm4 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  transition-duration: 2s;
+  transition-property: border-radius; /* transition対象のプロパティを指定 */
+}
+
+#tsm4:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
+
+#transition_box {
+  width: 20em;
+  height: 1.5em;
+  border: 2px solid;
+  border-color: cadetblue;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+/* -- 複数のタグで同一のtranstionを設定 -- */
+.tsm5 {
+  width: 3em;
+  height: 1.5em;
+  border: 1px solid;
+  border-color: black;
+  text-align: center;
+
+  transition-duration: 1.5s;
+}
+
+.tsm5:hover {
+  background-color: blue;
+  color: white;
+}
+
+/* 「transition-property: none」でそのidのタグだけtransitionを外せる */
+#tsm5-1 {
+  transition-property: none;
+}
+
+/* ------- 3.transition-timing-function -------- */
+
+#tsm6 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  transition-duration: 2s;
+  transition-property: border-radius;
+  transition-timing-function: linear; /* animationと同じ */
+}
+
+#tsm6:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
+
+#tsm7 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  transition-duration: 2s;
+  transition-property: border-radius;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.9, 0.1);
+}
+
+#tsm7:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
+
+#tsm8 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  transition-duration: 2s;
+  transition-timing-function: steps(4, jump-none);
+}
+
+#tsm8:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
+
+#flex_box2 {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------- 4.transition-delayと一括指定 -------------- */
+/* duration > delayは同じ。propertyの複数視点のとき注意　↓ */
+
+#tsm9 {
+  width: 5em;
+  height: 5em;
+  background-color: blue;
+  margin: 0 auto;
+
+  /* border-radius: 1秒かけて直線的に変化
+     background-color: 1秒のdelay後、3秒かけてsteps()で変化
+   */
+  transition: 1s border-radius linear,
+    3s background-color steps(4, jump-none) 1s;
+}
+
+#tsm9:hover {
+  border-radius: 50%;
+  background-color: orangered;
+}
