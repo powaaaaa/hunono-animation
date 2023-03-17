@@ -1,0 +1,441 @@
+#anp {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 50%; /* 規定値(→0%)が中央 */
+  text-align: center;
+
+  /* アニメーションのプロパティ */
+  animation-name: ani-1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+#anp2 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%; /* 規定値(→0%)が左端 */
+  text-align: center;
+
+  /* 一括指定（duration、delay以外は順不同）*/
+  animation: ani-1 2s infinite;
+}
+
+/*
+  キーフレーム
+  0% → from、100% → to
+  keepは同じ内容　書き連ねできる
+*/
+@keyframes ani-1 {
+  from {
+    background-color: white;
+  }
+  30%,
+  60% {
+    background-color: aqua;
+    color: rgb(97, 32, 32);
+  }
+  to {
+    background-color: #1c159a;
+    color: white;
+    margin-left: 60%;
+  }
+}
+
+#anp3 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+
+  animation-name: ani-2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* 開始と終了を消した例。往復する */
+@keyframes ani-2 {
+  50% {
+    margin-left: 60%;
+    background-color: aqua;
+  }
+}
+
+/*
+----------------------------------------------------------------------------
+  [step4] Delay Animations
+  複数アニメーションで時間差を仕掛けるとき便利
+*/
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#dap1 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: red;
+
+  animation: dan 4s infinite;
+}
+
+#dap2 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: blue;
+
+  animation: dan 4s infinite;
+  animation-delay: 1s; /* 遅延のプロパティ */
+}
+
+#dap3 {
+  font-size: 2em;
+  border: solid 2px;
+  border-radius: 0.5em;
+  width: 40%;
+  margin-left: 0%;
+  text-align: center;
+  background-color: yellow;
+
+  animation: dan 4s 2s infinite; /* 一括指定。必ずdurationの後にdelay */
+}
+
+@keyframes dan {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+-----------------------------------------------------------------------
+  timing-functionのAnimation　5例
+*/
+
+#tfa1 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease; /* 初期値 */
+}
+
+#tfa2 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: linear;
+}
+
+#tfa3 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-in;
+}
+
+#tfa4 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-out;
+}
+
+#tfa5 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes tfn {
+  from {
+    width: 0%;
+  }
+}
+
+/*
+-----------------------------------------------------------------
+  animation-timing-functionを表現するcubic-beziserの、線分の両端のハンドルの座標を指定する。それによりアニメーションの進捗を任意のカーブで制御できる
+  x,y軸ともに[0,1]範囲に収めるのが良い。
+*/
+
+#tfa6 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: cubic-bezier(0.9, 0.2, 0.25, 1);
+}
+
+@keyframes tfn2 {
+  from {
+    width: 0%;
+  }
+}
+
+/*
+----------------------------------------------------------------------
+animation-timing-functionでコマ送りするsteps()
+*/
+
+#tfa7 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-none);
+}
+
+#tfa8 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-start);
+}
+
+#tfa9 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-end);
+}
+
+#tfa10 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn2 4s infinite;
+  animation-timing-function: steps(4, jump-both);
+}
+
+/*
+  steps()というかanimation-timing-functionの全ての値は、キーフレームごとに適用されることに注意
+  4分割*キーフレーム2個なので、全体として8分割される。
+ */
+#tfa11 {
+  width: 100%;
+  height: 2em;
+  background-color: #00aeef;
+
+  animation: tfn3 4s infinite;
+  animation-timing-function: steps(4, jump-none);
+}
+
+@keyframes tfn3 {
+  from {
+    width: 0%;
+    opacity: 1;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+/*
+---------------------------------------------------------------------
+  animation-direction
+ */
+
+#adp1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s infinite linear;
+  animation-direction: normal;
+}
+
+#adp2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s infinite linear;
+  animation-direction: reverse;
+}
+
+#adp3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s linear;
+  animation-iteration-count: 128; /* 1往復で2count */
+  animation-direction: alternate;
+}
+
+#adp4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s 128 ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes adn {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: 90%;
+  }
+}
+
+/*
+----------------------------------------------------------------------
+  animation-fill-mode
+*/
+
+#afm1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: none;
+}
+
+#afm2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: forwards;
+}
+
+#afm3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: backwards;
+}
+
+#afm4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: afn 2s 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes afn {
+  from {
+    background-color: coral;
+    margin-left: 0;
+  }
+  to {
+    background-color: coral;
+    margin-left: 90%;
+  }
+}
+
+/*
+---------------------------------------------------------------------------
+  animation-play-state
+  divタグでclassで指定し、hoverで停止、再生する
+ */
+
+.aps1 {
+  width: 20px;
+  height: 4em;
+  border-radius: 1em;
+  margin: 0 auto;
+  background-color: #00aeef;
+
+  animation: aps1 2s infinite linear alternate;
+  animation-play-state: paused;
+}
+
+.aps1:hover {
+  animation-play-state: running;
+}
+
+.aps2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: aps2 2s infinite linear alternate;
+}
+
+.aps2:hover {
+  animation-play-state: paused;
+}
+
+@keyframes aps1 {
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes aps2 {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: 90%;
+  }
+}
+
+#aps3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: aps2 2s infinite linear alternate;
+}

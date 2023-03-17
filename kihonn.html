@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>基本</title>
+    <link rel="stylesheet" href="kihonn.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Hello, meityan!!!!</h2>
+      <nav>
+        <li><a href="/">Home</a></li>
+        <li><a href="./kihonn.html">基本</a></li>
+        <li><a href="./midtest.html">中間テスト</a></li>
+      </nav>
+    </header>
+    <main>
+        <section>
+        <h3>Step1~3 KeyFrames</h3>
+        <p id="anp">CSS</p>
+        <p id="anp2">CSS</p>
+        <p id="anp3">CSS</p>
+      </section>
+
+      <!--- step4 delay Animation -->
+      <section>
+        <h3>Step4 Delay</h3>
+        <ul>
+          <li><p id="dap1">CSS</p></li>
+          <li><p id="dap2">CSS</p></li>
+          <li><p id="dap3">CSS</p></li>
+        </ul>
+      </section>
+
+      <!--- step5 Animation timing function -->
+      <section>
+        <h3>Step5 Animation Timing Function</h3>
+        <div id="tfa1">ease</div>
+        <div id="tfa2">liner</div>
+        <div id="tfa3">ease-in</div>
+        <div id="tfa4">ease-out</div>
+        <div id="tfa5">ease-in-out</div>
+      </section>
+
+      <!--- step6 animation-timing-function: cubic-beziier() -->
+      <section>
+        <h3>Step6 [ATF] cubic-bezier</h3>
+        <div id="tfa6">可変</div>
+      </section>
+
+      <!--- step7 animation-timing-function: steps() -->
+      <section>
+        <h3>Step7 [ATF] steps</h3>
+        <div id="tfa7">jump-none</div>
+        <div id="tfa8">jump-start</div>
+        <div id="tfa9">jump-end</div>
+        <div id="tfa10">jump-both</div>
+
+        <p>
+          <div id="tfa11">attention!</div>
+        </p>
+      </section>
+
+      <!--- step8 animation-direction -->
+      <section>
+        <h3>Step8 animation-direction</h3>
+        <div id="adp1">normal</div>
+        <div id="adp2">reverse</div>
+        <div id="adp3">alternata</div>
+        <div id="adp4">alternate-reverse</div>
+      </section>
+
+      <!--- step9 animation-fill-mode -->
+      <section>
+        <h3>Step9 animation-fill-mode</h3>
+        <div id="afm1">none</div>
+        <div id="afm2">forwards</div>
+        <div id="afm3">backwards</div>
+        <div id="afm4">both</div>
+      </section>
+
+      <!--- step10 animation-play-state -->
+      <section>
+        <h3>Step10 animation-play-state</h3>
+        <div class="aps1">runnning(hover)</div>
+        <div class="aps2">paused1</div>
+
+        <div id="aps3">JavaScript使用</div>
+        <button onclick="pause()">一時停止/再開</button>
+        <script>
+          let num = 1;
+          const aps3 = document.getElementById("aps3");
+
+          function pause() {
+            if(num == 1) {
+              aps3.style.animationPlayState = "paused";
+              num = 0;
+            } else {
+              aps3.style.animationPlayState = "running";
+              num = 1;
+            }
+          }
+        </script>
+      </section>
+    </main>
+  </body>
+</html>
