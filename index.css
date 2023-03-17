@@ -270,3 +270,58 @@ animation-timing-functionでコマ送りするsteps()
     opacity: 0;
   }
 }
+
+/*
+---------------------------------------------------------------------
+  animation-direction
+ */
+
+#adp1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s infinite linear;
+  animation-direction: normal;
+}
+
+#adp2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s infinite linear;
+  animation-direction: reverse;
+}
+
+#adp3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s linear;
+  animation-iteration-count: 128; /* 1往復で2count */
+  animation-direction: alternate;
+}
+
+#adp4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00aeef;
+
+  animation: adn 2s 128 ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes adn {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: 90%;
+  }
+}
