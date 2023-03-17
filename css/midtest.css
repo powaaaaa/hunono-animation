@@ -5,3 +5,123 @@ ul {
 li {
   list-style: none;
 }
+
+#question1 {
+  text-align: center;
+
+  animation: qan1 2s infinite;
+}
+
+@keyframes qan1 {
+  to {
+    opacity: 0;
+  }
+}
+
+/* #question2 {
+  color:blue;
+  animation-name:qan2;
+  animation-delay: 1s;
+  animation-iteration-count: 2;
+  animation-duration: 2s;
+}
+
+@keyframes qan2 {
+  0% {
+    color:blue;
+  }
+  100% {
+    color:red;
+  }
+} */
+
+#question2 {
+  color: blue;
+  animation: qan2 2s 1s 2;
+}
+
+@keyframes qan2 {
+  to {
+    color: red;
+  }
+}
+
+#question3-1 {
+  color: aliceblue;
+  font-size: large;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: coral;
+
+  animation: qan3 3s infinite;
+}
+
+#question3-2 {
+  color: aliceblue;
+  font-size: large;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  background-color: cadetblue;
+
+  animation: qan3 3s 0.5s infinite;
+}
+
+@keyframes qan3 {
+  from {
+    margin-left: 10%;
+  }
+  to {
+    margin-left: 80%;
+  }
+}
+
+#question4 {
+  width: 100%;
+  height: 0.2em;
+  background-color: brown;
+
+  animation: qan4 4s infinite linear;
+}
+
+@keyframes qan4 {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#question5 {
+  text-align: center;
+
+  animation: qan5 2s 128 alternate;
+}
+
+@keyframes qan5 {
+  from {
+    color: black;
+  }
+  to {
+    color: white;
+  }
+}
+
+#question6 {
+  width: 100px;
+  height: 100px;
+  border: 3px solid;
+  border-color: blue;
+  background-color: white;
+  margin: 0 auto;
+
+  animation: qan6 3s infinite forwards;
+}
+
+@keyframes qan6 {
+  to {
+    border-radius: 50%;
+  }
+}
